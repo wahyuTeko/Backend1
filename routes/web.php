@@ -26,3 +26,10 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     ]);
 });
 
+$router->group(['frefix' => 'api'], function () use ($router) {
+    $router->get('barangs', ['uses' => 'BarangController@index']);
+    $router->get('barangs/{id}', ['uses' => 'BarangController@show']);
+    $router->post('barangs', ['uses' => 'BarangController@store', 'middleware' => 'jwt.auth']);
+    $router->put('barangs/{id}', ['uses' => 'BarangController@update', 'middleware' => 'jwt.auth']);
+    $router->delete('barangs/{id}', ['uses' => 'BarangController@destroy', 'middleware' => 'jwt.auth']);
+});
