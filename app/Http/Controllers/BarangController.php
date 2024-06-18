@@ -16,7 +16,7 @@ class BarangController extends Controller
 
     public function index()
     {
-        return response()->json($barang::all());
+        return response()->json(barang::all());
     }
 
     public function store(Request $request)
