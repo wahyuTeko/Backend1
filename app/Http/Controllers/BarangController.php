@@ -46,7 +46,7 @@ class BarangController extends Controller
     {
         $barang = barang::find($id);
         if (!$barang) {
-            return response()->json(['message' => 'Baranng not found'], 404);
+            return response()->json(['message' => 'Barang not found'], 404);
         }
         return response()->json($barang);
     }
