@@ -46,7 +46,7 @@ class BarangController extends Controller
     {
         $barang = barang::find($id);
         if (!$barang) {
-            return response()->json(['massage' => 'Baranng not found'], 404);
+            return response()->json(['message' => 'Baranng not found'], 404);
         }
         return response()->json($barang);
     }
@@ -63,8 +63,8 @@ class BarangController extends Controller
         ]);
 
         $barang = Barang::find($id);
-        if ($barang) {
-            return response()->json(['massage' => 'Barang not found'], 404);
+        if (!$barang) {
+            return response()->json(['message' => 'Barang not found'], 404);
         }
 
         $barang->update($request->all());
@@ -75,11 +75,11 @@ class BarangController extends Controller
     {
         $barang = Barang::find($id);
         if (!$barang) {
-            return response()->json(['massage' => 'Barang not found'], 404);
+            return response()->json(['message' => 'Barang not found'], 404);
         }
 
         $barang->delete();
-        return response()->json(['massage' => 'barang deleted']);
+        return response()->json(['message' => 'barang deleted']);
     }
         
 }
