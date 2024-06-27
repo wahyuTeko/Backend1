@@ -1,4 +1,4 @@
- <?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -10,9 +10,12 @@ class CreateBarangsTable extends Migration
     {
         Schema::create('barangs', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->integer('price');
+            $table->string('nama_barang');
+            $table->string('kategori');
+            $table->integer('stock');
+            $table->text('deskripsi');
+            $table->integer('harga');
+            $table->string('foto_barang')->nullable();
             $table->timestamps();
         });
     }
@@ -22,3 +25,5 @@ class CreateBarangsTable extends Migration
         Schema::dropIfExists('barangs');
     }
 }
+
+
